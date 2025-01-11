@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 # ایجاد 10 نقطه تصادفی در فضای 2 بعدی
 np.random.seed(0)  # برای تکرارپذیری
@@ -46,3 +47,23 @@ average_distances = calculate_average_distance_to_nearest_neighbors(points)
 print("میانگین فاصله هر نقطه تا سه همسایه نزدیک:")
 for i, avg_dist in enumerate(average_distances):
     print(f"نقطه {i + 1}: {avg_dist:.4f}")
+
+# رسم گرافیکی
+plt.figure(figsize=(10, 5))
+
+# رسم نقاط
+plt.subplot(1, 2, 1)
+plt.scatter(points[:, 0], points[:, 1])
+for i, point in enumerate(points):
+    plt.annotate(f"{i + 1}", (point[0], point[1]))
+plt.title("نقاط در فضای 2 بعدی")
+
+# رسم میانگین فاصله
+plt.subplot(1, 2, 2)
+plt.bar(range(1, len(points) + 1), average_distances)
+plt.xlabel("شماره نقطه")
+plt.ylabel("میانگین فاصله تا سه همسایه نزدیک")
+plt.title("میانگین فاصله هر نقطه")
+
+plt.tight_layout()
+plt.show()
