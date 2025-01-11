@@ -39,8 +39,4 @@ The program prints the following outputs:
 
 Contributions are welcome. Feel free to submit pull requests or open issues for any suggestions or improvements.
 
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
 ---
